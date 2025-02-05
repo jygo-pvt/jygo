@@ -1,0 +1,249 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #0077cc;
+  --secondary-color: #ff7f50;
+  --background-color: #f9f9f9;
+  --text-color: #333333;
+  --light-gray: #f3f3f3;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  padding-bottom: 5rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+nav a {
+  margin-right: 1.5rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Hero Section */
+#home {
+  min-height: 100vh;
+  background-image: url("images/logo.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#home a {
+  background-color: var(--secondary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#home a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Featured Products Section */
+#products {
+  padding: 3rem 1rem;
+  background: var(--light-gray);
+}
+
+#products .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform 0.2s;
+}
+
+.product-card img {
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  max-width: 100%;
+  display: block;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+button, input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Testimonials Section */
+#testimonials {
+  background-color: var(--light-gray);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+blockquote {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Call-to-Action Section */
+#cta {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#cta-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#cta input[type="email"] {
+  padding: 0.5rem;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border: none;
+  flex-grow: 1;
+}
+
+#cta button {
+  padding: 0.5rem;
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  cursor: pointer;
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    display: block;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  #cta-form {
+    flex-direction: column;
+  }
+
+  #cta input[type="email"] {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    margin-bottom: 1rem;
+  }
+
+  #cta button {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+}
